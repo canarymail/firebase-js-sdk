@@ -23,19 +23,8 @@ function getScriptParentElement(): HTMLDocument | HTMLHeadElement {
 }
 
 export function _loadJS(url: string): Promise<Event> {
-  // TODO: consider adding timeout support & cancellation
   return new Promise((resolve, reject) => {
-    const el = document.createElement('script');
-    el.setAttribute('src', url);
-    el.onload = resolve;
-    el.onerror = e => {
-      const error = _createError(AuthErrorCode.INTERNAL_ERROR);
-      error.customData = e as unknown as Record<string, unknown>;
-      reject(error);
-    };
-    el.type = 'text/javascript';
-    el.charset = 'UTF-8';
-    getScriptParentElement().appendChild(el);
+    reject();
   });
 }
 
