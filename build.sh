@@ -1,4 +1,5 @@
 #!/bin/bash
+cd firebase-js-sdk
 folder="node_modules"
 if [ ! -d "$folder" ]; then
   echo "No build found for firebase-js-sdk. Building..."
@@ -7,3 +8,4 @@ if [ ! -d "$folder" ]; then
 else
   echo "Build found for firebase-js-sdk. Build skipped..."
 fi
+cd ..
